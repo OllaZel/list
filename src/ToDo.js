@@ -51,22 +51,23 @@ export class ToDo extends Component {
                 <input
                 placeholder="Запиши свое новое дело"
                 type="text"
+                value={this.state.userInput}
                 onChange={ (e) => {this.onChangeEvent(e.target.value)}}
                 />
             </div>
 
             <div className="container">
-                <button onClick={ () => {this.addItem(this.state.userInput)}}> + </button>
-                <button onClick={ () => this.deleteItem() }> -  </button>
+                <button className="btn add" onClick={ () => {this.addItem(this.state.userInput)}}> + </button>
+                <button className="btn delete" onClick={ () => this.deleteItem() }> -  </button>
             </div>
 
-            <ol>
+            <ul className="ulContainer">
                 {this.state.toDoList.map((item, index) => (
-                <li onClick={this.clickedWord} key="index"> 
+                <li onClick={this.clickedWord} key={index}> 
                 <img src={complete} alt="circle" width="20px"/> 
                 { item } 
                 </li>))}
-            </ol>
+            </ul>
                 </form>
             </div>
         )
