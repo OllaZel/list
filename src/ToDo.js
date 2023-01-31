@@ -63,7 +63,7 @@ export class ToDo extends Component {
 
             <ul className="ulContainer">
                 {this.state.toDoList.map((item, index) => (
-                <li onClick={this.clickedWord} key={index}> 
+                <li onClick={ ()=> this.clickedWord} key={index}> 
                 <img src={complete} alt="circle" width="20px"/> 
                 { item } 
                 </li>))}
