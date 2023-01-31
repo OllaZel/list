@@ -1,5 +1,4 @@
 import { Component } from "react";
-import circle from './circle.png';
 import complete from './complete.png';
 
 export class ToDo extends Component {
@@ -7,7 +6,6 @@ export class ToDo extends Component {
     state = {
         userInput: '',
         toDoList: [],
-        image: circle
     }
 
     onChangeEvent(e) {
@@ -27,8 +25,7 @@ export class ToDo extends Component {
 
     clickedWord(event) {
         const li = event.target;
-        li.classList.toggle('clicked'); 
-        this.setState({image: complete})       
+        li.classList.toggle('clicked');      
     }
 
     deleteItem() {
@@ -63,7 +60,7 @@ export class ToDo extends Component {
 
             <ul className="ulContainer">
                 {this.state.toDoList.map((item, index) => (
-                <li onClick={ ()=> this.clickedWord} key={index}> 
+                <li onClick={this.clickedWord} key={index}> 
                 <img src={complete} alt="circle" width="20px"/> 
                 { item } 
                 </li>))}
