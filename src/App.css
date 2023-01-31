@@ -30,7 +30,10 @@ li {
 
 .clicked {
   text-decoration: line-through red 2px;
-  color-scheme: grey;
+  color-scheme: grey; 
+  -webkit-text-decoration-line: line-through;
+  -webkit-text-decoration-color: red;
+  -webkit-text-decoration-thickness: 2px;
 }
 
 .btn {
